@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') -%>
+
+<h2 style="margin: 1em;">Welcome to <%=title%> </h2>
+
+<form action= "/mem/post" method="POST" class="form form-control" style="width: 50%;margin-left:20%;">
+
+English Name: 
+<input type='text' class="form form-control" name="enName"><br>
+    
+Japan Name: 
+<input type='text' class="form form-control" name="jpName"><br>
+    
+Youtube URL: 
+<input type='text' class="form form-control" name="youtubeURL"><br>
+    
+Twitter URL: 
+<input type='text' class="form form-control" name="twitterURL"><br>
+    
+Image URL: 
+<input type='text' class="form form-control" name="picURL"><br><br>
+
+<button type="submit" class="btn btn-success">Add</button>
+    
+</form>
+
+
+</body>
+</html>
