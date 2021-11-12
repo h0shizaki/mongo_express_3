@@ -12,13 +12,18 @@ class Member {
     }
 
     async postMember(req, res){
-        const data = req.body;
-        console.log(data)
+        const member = await memModel.find({});
+        const data = {
+            'id': member.length,
+            'engName' : req.body.engName,
+            'jpName' : req.body.jpName,
+            'youtubeURL':req.body.youtubeURL ,
+            'twitterURL': req.body.twitterURL,
+            'picURL': req.body.picURL
+            }
+
         const result = await memModel.create(data)
-        res.render('index.ejs',{
-            title: 'Index',
-            message: 'Add success'
-        })
+        res.redirect('/')
     }
 }
 

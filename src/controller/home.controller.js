@@ -1,7 +1,12 @@
+const memModel = require('../models/member');
+
 class Home {
-    IndexPage(req , res) {
+    async IndexPage(req , res) {
+        const data = await memModel.find({});
+
         res.render('index.ejs',{
-            title : 'Index'
+            title : 'Index',
+            members: data
         })
     }
 }

@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 const memShcema = new mongoose.Schema({
+    id:{
+        type:String
+    },
     engName:{
         type: String,
         required: true
