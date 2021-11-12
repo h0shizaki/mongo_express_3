@@ -1,3 +1,5 @@
+const memModel = require('../models/member');
+
 class Member {
     memberList(req , res) {
         res.send({Message: 'Member'})
@@ -9,8 +11,14 @@ class Member {
         })
     }
 
-    postMember(req, res){
-        res.send(req.body)
+    async postMember(req, res){
+        const data = req.body;
+        console.log(data)
+        const result = await memModel.create(data)
+        res.render('index.ejs',{
+            title: 'Index',
+            message: 'Add success'
+        })
     }
 }
 
