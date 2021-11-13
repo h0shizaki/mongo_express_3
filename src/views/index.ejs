@@ -1,15 +1,15 @@
 <%- include('partials/header.ejs') -%>
 
     <div class="container">
-        <h2 style="margin: 1em;">Welcome to <%=title%> page</h2>
-        <a href="/mem/add" style="float:right;" class="btn btn-success">Add member</a>
+        <h2 style="margin: .5em;">Welcome to <%=title%> page</h2>
+        <a href="/mem/add" style="float:right;margin-bottom: 1em;" class="btn btn-success">Add member</a>
     </div>
 
     <%if(members.length == 0){ %>
             Please add member <a href="/mem/add"class="btn btn-success">Add member</a>
     <% }else{ %>
-    <div class="container">
-        <table class="table table-striped">
+    <div class="container" style="margin-bottom: 5em;">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <td> # </td>
@@ -30,7 +30,7 @@
                         <td><a href='<%=member.youtubeURL%>'>Youtube</a></td>
                         <td><a href='<%=member.twitterURL%>'>Twitter</a></td>
                         <td><a class="btn btn-warning" href='mem/edit/<%=member.id%>'>Edit</a></td>
-                        <td><a class="btn btn-danger" href='delete/<%=member.id%>'>Delete</a></td>   
+                        <td><a class="btn btn-danger" href='mem/delete/<%=member.id%>'>Delete</a></td>   
                     </tr>
                     <%})%>
             <% } %>

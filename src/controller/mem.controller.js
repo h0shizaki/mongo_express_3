@@ -35,7 +35,7 @@ class Member {
     }
 
     async putMember(req, res){
-        const result = await memModel.updateOne(
+        await memModel.updateOne(
             {
                 id : req.body.memId
             },
@@ -50,9 +50,17 @@ class Member {
 
             } )
 
-        console.log(result);
         res.redirect('/')
     }
+
+    async delMember(req , res){
+        const id = req.params.id;
+        if(!id) res.redirect('/')
+
+        await memModel.deleteOne({'id' : id})
+        res.redirect('/')
+    }
+
 }
 
 const memController = new Member();

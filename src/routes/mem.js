@@ -8,4 +8,6 @@ router.post('/post' ,memController.postMember);
 router.get('/edit/:id' , memController.editMemberPage);
 router.post('/put' , memController.putMember);
 
+router.get('/delete/:id', (memController.delMember));
+
 module.exports = router 
