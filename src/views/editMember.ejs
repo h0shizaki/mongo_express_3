@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') -%>
+
+<h2 style="margin: 1em;">Welcome to <%=title%> </h2>
+
+<%if(!data) {%>
+    <div class='container'>
+        Error: Sometime went wrong <a href='/'>back</a> 
+    </div>
+<% }else{ %>
+
+    <form action= "/mem/put" method="POST" class="form form-control" style="width: 50%;margin-left:20%;">
+    English Name: 
+    <input type='text' class="form form-control" name="engName" value="<%=data.engName%>"><br>
+        
+    Japan Name: 
+    <input type='text' class="form form-control" name="jpName" value="<%=data.jpName%>"><br>
+        
+    Youtube URL: 
+    <input type='text' class="form form-control" name="youtubeURL" value="<%=data.youtubeURL%>"><br>
+        
+    Twitter URL: 
+    <input type='text' class="form form-control" name="twitterURL" value="<%=data.twitterURL%>"><br>
+        
+    Image URL: 
+    <input type='text' class="form form-control" name="picURL" value="<%=data.picURL%>"><br><br>
+    
+    <input type='hidden' name='memId' value="<%=data.id%>">
+
+    <button type="submit" class="btn btn-warning">Edit</button>   
+    </form>
+
+<%}%>
+
+</body>
+</html>

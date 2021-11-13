@@ -29,9 +29,8 @@
                         <td style="width: 10em;"><img style="width: 100%;" src='<%= member.picURL %>'/></td>
                         <td><a href='<%=member.youtubeURL%>'>Youtube</a></td>
                         <td><a href='<%=member.twitterURL%>'>Twitter</a></td>
-                        <td><a class="btn btn-warning" href='test/<%=member.__id%>'>Edit</a></td>
-                        <td><a class="btn btn-danger" href='<%=member.twitterURL%>'>Delete</a></td>
-                    
+                        <td><a class="btn btn-warning" href='mem/edit/<%=member.id%>'>Edit</a></td>
+                        <td><a class="btn btn-danger" href='delete/<%=member.id%>'>Delete</a></td>   
                     </tr>
                     <%})%>
             <% } %>
